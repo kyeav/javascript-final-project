@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body id="movies__body">
+    <section>
+        <nav>
+            <div class="nav__container">
+                <img src="./assets/logo.jpg" alt="" class="logo">
+                <ul class="nav__links">
+                    <li><a href="" class="nav__link link__hover-effect no-cursor">Home</a></li>
+                    <li><a href="#" class="nav__link link__hover-effect">Find your movie</a></li>
+                    <li><a href="" class="nav__link nav__link--primary no-cursor">Contact</a></li>
+                </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu__backdrop" style="visibility: hidden;">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="menu__links">
+                        <li class="menu__list">
+                            <a href="" class="menu__link nav__link link__hover-effect no-cursor"
+                                onclick="closeMenu()">Home</a>
+                        </li>
+                        <li class="menu__list">
+                            <a href="#" class="menu__link nav__link link__hover-effect" onclick="closeMenu()">Find
+                                your
+                                movie</a>
+                        </li>
+                        <li class="menu__list">
+                            <a href="" class="menu__link nav__link nav__link--primary no-cursor"
+                                onclick="closeMenu()">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <main id="movies__main">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <h1 class="purple">Browse Movies</h1>
+                    <div class="movies__header">
+                        <div class="search">
+                            <input id="mySearch" class="input" type="text" placeholder="Search Movies..."
+                                onkeyup="search(event)">
+                            <button class="btn" onclick="searchButton(event)">Enter</button>
+                        </div>
+                    </div>
+                    <div class="results">
+                        <h2 class="purple">Results for: <span class="film__title"></span></h2>
+                        <select id="filter" onchange="filterMovies(event)">
+                            <option value="" disabled selected>Sort</option>
+                            <option value="OLD-NEW">Year of Release: Old-New</option>
+                            <option value="NEW-OLD">Year of Release: New-Old</option>
+                            <option value="A-Z">Title: A-Z</option>
+                        </select>
+                    </div>
+                    <div class="movies movies__loading">
+                        <!-- <i class="fas fa-spinner movies__loading--spinner"></i> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
